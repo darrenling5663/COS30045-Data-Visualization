@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.1 - SVG Primitives and Coordinates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 900px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #0056b3;
+        }
+
+        .svg-container {
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #87CEEB; /* Sky blue background */
+            display: block;
+            margin: 20px auto;
+        }
+
+        .annotation-section {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0056b3;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .annotated-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exercise 4.1: Drawing with SVG Primitives</h1>
+    <p>This page demonstrates building an interactive graphical scene using native Scalable Vector Graphics (SVG) elements, grouping primitives, and working with the SVG Cartesian coordinate space.</p>
+
+    <!-- The SVG Drawing -->
+    <svg class="svg-container" width="800" height="600" viewBox="0 0 800 600">
+
+        <!-- Background Lawn: <rect> -->
+        <rect x="0" y="420" width="800" height="180" fill="#4CAF50" />
+
+        <!-- Sun: <circle> -->
+        <circle cx="100" cy="90" r="45" fill="#FFD700" stroke="#FFA500" stroke-width="4" />
+
+        <!-- Sun Rays: <line> -->
+        <line x1="100" y1="30" x2="100" y2="10" stroke="#FFA500" stroke-width="3" stroke-linecap="round" />
+        <line x1="100" y1="150" x2="100" y2="170" stroke="#FFA500" stroke-width="3" stroke-linecap="round" />
+        <line x1="40" y1="90" x2="20" y2="90" stroke="#FFA500" stroke-width="3" stroke-linecap="round" />
+        <line x1="160" y1="90" x2="180" y2="90" stroke="#FFA500" stroke-width="3" stroke-linecap="round" />
+
+        <!-- Chimney: <rect> -->
+        <rect x="520" y="190" width="40" height="80" fill="#8B4513" stroke="#5C2E0B" stroke-width="2" />
+
+        <!-- Roof: <polygon> -->
+        <polygon points="320,250 500,140 680,250" fill="#B22222" stroke="#7A1818" stroke-width="3" />
+
+        <!-- House Main Walls: <rect> -->
+        <rect x="350" y="250" width="300" height="220" fill="#FFF8DC" stroke="#333333" stroke-width="3" />
+
+        <!-- Front Door: <rect> -->
+        <rect x="470" y="350" width="60" height="120" fill="#8B4513" stroke="#4A2508" stroke-width="2" />
+
+        <!-- Doorknob: <circle> -->
+        <circle cx="520" cy="415" r="5" fill="#FFD700" />
+
+        <!-- Winding Garden Path: <polyline> -->
+        <polyline points="500,470 480,510 530,550 510,600" fill="none" stroke="#D2B48C" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- Tree Trunk: <rect> -->
+        <rect x="180" y="360" width="40" height="130" fill="#8B5A2B" />
+
+        <!-- Tree Foliage: <ellipse> -->
+        <ellipse cx="200" cy="330" rx="75" ry="95" fill="#2E8B57" opacity="0.95" />
+
+        <!-- ======================================================= -->
+        <!-- Step 4: Group Element <g> with Windows                   -->
+        <!-- Styling applied universally; positioned via transform   -->
+        <!-- ======================================================= -->
+        <g id="house-windows" fill="#E0F7FA" stroke="#003366" stroke-width="3">
+
+            <!-- Window 1: Left Window positioned via translation -->
+            <g transform="translate(380, 280)">
+                <rect x="0" y="0" width="60" height="60" />
+                <line x1="30" y1="0" x2="30" y2="60" />
+                <line x1="0" y1="30" x2="60" y2="30" />
+            </g>
+
+            <!-- Window 2: Right Window positioned via translation -->
+            <g transform="translate(560, 280)">
+                <rect x="0" y="0" width="60" height="60" />
+                <line x1="30" y1="0" x2="30" y2="60" />
+                <line x1="0" y1="30" x2="60" y2="30" />
+            </g>
+        </g>
+
+        <!-- Welcome Text: <text> -->
+        <text x="440" y="235" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">My SVG Home</text>
+    </svg>
+
+    <!-- Step 2: Coordinate Explanations and Annotated Image Placeholder -->
+    <section class="annotation-section">
+        <h2>Step 2: Understanding the SVG Coordinates</h2>
+        <p>In SVG, coordinates start at <strong>(0, 0) in the top-left corner</strong>. The table below correlates the code attributes with the exact graphical elements rendered above:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Primitive</th>
+                    <th>Code Example</th>
+                    <th>Coordinate Interpretation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;rect&gt;</code></td>
+                    <td><code>x="350" y="250" width="300" height="220"</code></td>
+                    <td>Starts 350px from left and 250px from top, extending 300px wide and 220px downward.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;circle&gt;</code></td>
+                    <td><code>cx="100" cy="90" r="45"</code></td>
+                    <td>The circle center is fixed at (100, 90) with a radial span of 45px.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;polygon&gt;</code></td>
+                    <td><code>points="320,250 500,140 680,250"</code></td>
+                    <td>Creates the triangular roof connecting the left eaves (320, 250), apex (500, 140), and right eaves (680, 250).</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;ellipse&gt;</code></td>
+                    <td><code>cx="200" cy="330" rx="75" ry="95"</code></td>
+                    <td>Center of tree canopy at (200, 330) with an X-radius of 75px and a vertical Y-radius of 95px.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;line&gt;</code></td>
+                    <td><code>x1="100" y1="30" x2="100" y2="10"</code></td>
+                    <td>Renders a direct ray line starting at (100, 30) and running straight up to (100, 10).</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;polyline&gt;</code></td>
+                    <td><code>points="500,470 480,510 530,550 510,600"</code></td>
+                    <td>Defines a sequence of connected road vertices running from the door threshold down to the bottom border.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;g&gt;</code></td>
+                    <td><code>transform="translate(380, 280)"</code></td>
+                    <td>Shifts the local coordinate origin for the enclosed shapes 380px right and 280px down.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 25px;">Annotated Diagram</h3>
+        <p>Annotated diagram verifying element placement across the $800 \times 600$ viewport:</p>
+        <!-- Place your annotated screenshot here as required by Step 2 -->
+        <img src="annotated-coordinates.png" alt="Annotated SVG Coordinate Diagram" class="annotated-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display: none; padding: 20px; border: 1px dashed #94a3b8; background: #fff; text-align: center; color: #64748b;">
+            <em>[Take a screenshot of the house above, draw coordinate arrows pointing to (0,0), cx/cy, and x/y points using Paint or Draw.io, save it as <code>annotated-coordinates.png</code>, and place it in your root directory].</em>
+        </div>
+    </section>
+
+    <footer style="margin-top: 40px; text-align: center; font-size: 14px; color: #666;">
+        <p>Exercise 4.1 &copy; 2026. Built using native SVG primitives.</p>
+        <p><em>AI Declaration: Generative AI was used to assist in calculating coordinate geometry and scaffolding the SVG layout.</em></p>
+    </footer>
+
+</body>
+</html>
