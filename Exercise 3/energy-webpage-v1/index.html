@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Appliance Energy Consumption</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/PowerIcon.png" alt="Power Logo" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="televisions.html">Televisions</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Appliance Energy Consumption</h1>
+            <p>Understanding energy usage in the Australian market.</p>
+        </header>
+
+        <section class="content-section">
+            <h2>The Australian Energy Landscape</h2>
+            <p>In Australia, household appliances account for a significant portion of daily energy consumption. With rising electricity prices (cents per kWh), understanding the power draw of everyday devices like televisions, refrigerators, and washing machines is crucial for households looking to reduce their carbon footprint and manage utility bills effectively.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <button class="faq-question">What uses the most energy in an Australian home?</button>
+                <div class="faq-answer">
+                    <p>Heating and cooling usually account for the largest portion of household energy use, often up to 40%, followed by water heating and appliances.</p>
+                </div>
+
+                <button class="faq-question">How can I reduce my appliance energy costs?</button>
+                <div class="faq-answer">
+                    <p>You can reduce costs by purchasing appliances with a high Energy Rating label, turning off appliances at the wall to avoid standby power, and using them during off-peak hours.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section calculator-section">
+            <h2>Appliance Energy Calculator</h2>
+            <p>Estimate how much your appliances cost to run.</p>
+            
+            <form id="energy-form">
+                <div class="form-group">
+                    <label for="wattage">Appliance Power Usage (Watts):</label>
+                    <input type="number" id="wattage" placeholder="e.g. 150" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hours">Average Hours of Use per Day:</label>
+                    <input type="number" id="hours" placeholder="e.g. 4" min="0.1" step="0.1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Electricity Price (cents per kWh):</label>
+                    <input type="number" id="price" placeholder="e.g. 30" min="1" step="0.1" required>
+                </div>
+
+                <button type="submit" class="btn">Calculate Energy</button>
+                <div id="error-message" class="error hidden">Please enter valid numbers for all fields.</div>
+            </form>
+
+            <div id="results-panel" class="results-panel hidden">
+                <h3>Estimated Consumption & Cost</h3>
+                <p><strong>Daily Consumption:</strong> <span id="res-daily-kwh">0</span> kWh</p>
+                <p><strong>Yearly Consumption:</strong> <span id="res-yearly-kwh">0</span> kWh</p>
+                <p><strong>Daily Cost:</strong> $<span id="res-daily-cost">0.00</span></p>
+                <p><strong>Yearly Cost:</strong> $<span id="res-yearly-cost">0.00</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> [Darren Ling Jun Hang].</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

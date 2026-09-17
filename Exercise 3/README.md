@@ -16,11 +16,11 @@ You must use the **Exercise 3 folder in your existing forked repository** and re
 
 The target audience for this visualisation includes:
 
-- Consumers interested in **energy-efficient televisions**
-- Policy makers and regulators interested in **energy consumption trends**
-- Researchers studying **energy efficiency in consumer electronics**
+* **Everyday Consumers:** Household owners and renters looking to balance screen size with long-term operating costs.
+* **Policy Makers & Regulators:** Officials monitoring appliance energy efficiency trends and compliance with Minimum Energy Performance Standards (MEPS).
+* **Researchers & Advocates:** Analysts studying household energy consumption patterns and consumer electronics efficiency.
 
-These audiences are interested in understanding how **television energy consumption varies across models, sizes, and technologies**, and how these factors influence overall energy usage.
+These audiences need transparent data on how television power draw varies across screen dimensions, panel technologies, and Energy Star ratings to make informed economic and regulatory decisions.
 
 ### Story Overview
 
@@ -49,9 +49,9 @@ The dataset was provided as part of the course materials.
 
 Before creating visualisations, the dataset was processed to ensure it was suitable for analysis. This included:
 
-- Cleaning missing or inconsistent values
-- Selecting relevant attributes for visualisation
-- Organising the data into formats suitable for web visualisation
+* **Attribute Selection:** Filtered the dataset to focus on diagonal screen size (centimetres) and labelled comparative annual energy consumption (kWh/year).
+* **Cleaning:** Pruned empty rows, non-standard screen entries, and discontinued legacy models to focus on current consumer display technologies (LED, OLED, and QLED).
+* **Cost Derivation:** Applied an average benchmark Australian electricity price of 30 cents per kWh over a standard usage profile (10 hours daily active operation, 14 hours standby) to translate raw kWh metrics into estimated annual operational costs.
 
 ### Privacy
 
@@ -61,9 +61,8 @@ The dataset does not contain any **personal or sensitive information**. It focus
 
 While the dataset provides useful information about TV energy consumption, there are some limitations:
 
-- The dataset may not include **all available television models**
-- Some information may be **outdated or incomplete**
-- Energy consumption may vary depending on **real-world usage conditions**
+* **Standard Test Conditions:** Test ratings are benchmarked under controlled laboratory presets. Real-world power consumption may vary significantly based on user display brightness, HDR streaming, gaming mode usage, and ambient temperature.
+* **Tariff Variations:** Electricity prices fluctuate across countries, states and retail plans; 30¢/kWh serves as an indicative national average.
 
 These factors should be considered when interpreting the visualisations.
 
@@ -71,25 +70,11 @@ These factors should be considered when interpreting the visualisations.
 
 When presenting data visualisations, it is important to ensure that the information is represented **accurately and responsibly**.
 
-This project follows ethical data visualisation practices by:
-
-- Avoiding misleading visual representations
-- Clearly explaining the context of the data
-- Presenting information transparently so viewers can interpret the results correctly
-
----
+This project follows ethical data visualisation practices by avoiding misleading scale distortions by plotting raw, unmanipulated regulatory test data directly on standard axes. The story maintains neutrality across brands to prevent greenwashing and ensure consumers receive an objective representation of energy demands.
 
 ## AI Declaration
 
-Artificial Intelligence (AI) tools may have been used to assist with aspects of this assignment, such as:
-
-- Generating example code
-- Improving code structure
-- Assisting with documentation writing
-
-All AI-generated assistance was reviewed, modified where necessary, and integrated responsibly into the project.
-
----
+Generative AI was used to assist me in structuring the documentation, organizing narrative sections according to data storytelling principles, and scaffolding the HTML/CSS markup. All calculations, data interpretations, and final text were reviewed, tested, and validated against the course requirements.
 
 ## Website Storytelling
 
