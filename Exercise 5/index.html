@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5.3 - Donut Chart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="responsive-svg-container">
+        <h1>Energy Consumption by Screen Technology (55" TVs)</h1>
+        <!-- 5.1 Bar Chart -->
+        <div id="bar-chart"></div>
+
+        <h1 style="margin-top: 40px;">Average Electricity Spot Price in Australia (1998–2024)</h1>
+        <!-- 5.2 Line Chart -->
+        <div id="line-chart"></div>
+
+        <h1 style="margin-top: 40px;">Proportion of TV Models by Screen Size</h1>
+        <!-- 5.3 Donut Chart Container -->
+        <div id="donut-chart"></div>
+    </div>
+
+    <!-- D3 v7 Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Scripts for all 3 charts -->
+    <script src="js/vertical_bar_chart.js"></script>
+    <script src="js/line-chart.js"></script>
+    <script src="js/donut-chart.js"></script>
+</body>
+</html>
