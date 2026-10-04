@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffaf0;
+    color: #2b2b2b;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+.header-banner {
+    background-color: #c85a17;
+    color: #ffffff;
+    padding: 20px 30px;
+}
+
+.header-banner h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.content-body {
+    padding: 30px;
+}
+
+.content-body h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #1e1e1e;
+}
+
+.content-body p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Filter buttons */
+#filters_screen {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    background-color: #c85a17;
+    color: #ffffff;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter:hover {
+    opacity: 0.9;
+}
+
+.filter.active {
+    background-color: #fbd38d;
+    color: #744210;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+footer a {
+    color: #0056b3;
+    text-decoration: none;
+}

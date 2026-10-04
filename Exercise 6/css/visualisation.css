@@ -1,0 +1,14 @@
+.responsive-svg-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#histogram svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bar rect {
+    shape-rendering: crispEdges;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.3 - Scatterplot</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/visualisation.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header-banner">
+            <h1>TV Energy Consumption</h1>
+        </header>
+
+        <main class="content-body">
+            <h2>Energy Consumption for different TV screen types and sizes</h2>
+            <p>TVs vary considerably in energy consumption.</p>
+
+            <!-- Top Screen Tech Filters -->
+            <div id="filters_screen"></div>
+
+            <!-- Histogram Container -->
+            <div id="histogram" class="responsive-svg-container"></div>
+
+            <!-- Bottom Screen Size Filters -->
+            <div id="filters_size"></div>
+
+            <!-- Step: Scatterplot Container -->
+            <div id="scatterplot" class="responsive-svg-container" style="margin-top: 40px;"></div>
+
+            <footer>
+                <strong>Data source</strong><br>
+                <a href="#">Energy Rating Data for household appliances – Televisions</a><br>
+                <span>Downloaded Jan 2026</span>
+                <p style="margin-top: 10px;">&copy; Data Visualisation Week 6</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- D3 Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- JS Files in strict order -->
+    <script src="js/shared-constants.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/load-data.js"></script>
+</body>
+</html>
